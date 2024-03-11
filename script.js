@@ -1,5 +1,6 @@
 // Get the modal
 const modal = document.getElementById("myModal");
+const modalContentAnimation = document.getElementById("modal-content-animation");
 
 // Get the button that opens the modal
 const btn = document.getElementById("openModalBtn");
@@ -19,6 +20,8 @@ const step2RegisterBtn = document.getElementById("step2RegisterBtn");
 // When the user clicks the button, open the modal
 btn.onclick = () => {
   modal.style.display = "block";
+  modalContentAnimation.style.transform = "translateY(5%)";
+  modalContentAnimation.style.transition = "transform 2s";
   // Ensure modal starts from step 1
   document.getElementById("step1").style.display = "block";
   document.getElementById("step2").style.display = "none";

@@ -8,13 +8,15 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
+
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
+    margin: 0px auto;
+    padding: 20px 60px;
     border: 1px solid #888;
+    border-radius: 40px;
     width: 80%;
     max-width: 600px;
 }
@@ -33,6 +35,13 @@
     cursor: pointer;
 }
 
+.button-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 button {
     display: flex;
     flex-direction: column;
@@ -44,6 +53,7 @@ button {
     padding: 20px;
     border-radius: 60px;
     cursor: pointer;
+    font-family: inherit;
 }
 
 button .button-title {
@@ -52,4 +62,107 @@ button .button-title {
 
 button .button-subtitle {
     font-size: 12px;
+}
+
+.step-1-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    width: 100%;
+}
+
+#step1 {
+    width: 100%;
+}
+
+#step1 h2 {
+    font-family: 'geomanistregular', Arial, sans-serif;
+    font-weight: bold !important;
+    font-size: 34px;
+    text-align: center;
+
+
+}
+
+.step1-image-box {
+    width: 400px;
+    height: 400px;
+    margin: 30px auto 0px;
+}
+
+.step1-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-input,
+.email-input {
+    width: 100%;
+}
+
+.step-1-input input {
+    padding-left: 45px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    box-shadow: inset 0 1px 2px rgba(130, 137, 150, 0.23), 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-family: inherit;
+    width: 92%;
+    position: relative;
+}
+
+.step-1-input input::placeholder {
+    font-family: initial;
+}
+
+.step-1-input input:focus {
+    outline: 1px solid rgb(0, 192, 211);
+    box-shadow: inset 0 1px 2px rgba(0, 193, 211, 0.623), 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+.error-message {
+    color: red;
+    top: 0;
+}
+
+.name-icon,
+.email-icon {
+    position: relative;
+}
+
+.name-icon::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    background-image: url("./image/name.webp");
+    background-repeat: no-repeat;
+    z-index: 99;
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+}
+
+.email-icon::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    background-image: url("./image/email.webp");
+    background-repeat: no-repeat;
+    z-index: 99;
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+}
+
+.help-text {
+    font-size: 10px;
+    text-align: center;
+    font-family: 'geomanistregular', Arial, sans-serif;
 }
