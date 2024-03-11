@@ -1,6 +1,8 @@
 // Get the modal
 const modal = document.getElementById("myModal");
-const modalContentAnimation = document.getElementById("modal-content-animation");
+const modalContentAnimation = document.getElementById(
+  "modal-content-animation"
+);
 
 // Get the button that opens the modal
 const btn = document.getElementById("openModalBtn");
@@ -67,26 +69,27 @@ step2RegisterBtn.onclick = () => {
     email: email,
     option: selectedOption,
   };
-
+  console.log(data);
   // Example of posting data to API (you need to replace this with your actual API endpoint)
-  fetch("https://example.com/api/register", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => {
-      if (response.ok) {
-        modal.style.display = "none"; // Close the modal on successful registration
-        console.log("Registration successful");
-      } else {
-        console.error("Registration failed");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  // fetch("https://example.com/api/register", {
+  //   method: "POST",
+  //   body: JSON.stringify(data),
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  // })
+  //   .then((response) => {
+  //     if (response.ok) {
+  //       modal.style.display = "none"; // Close the modal on successful registration
+  //       showSuccessMessage();
+  //       console.log("Registration successful");
+  //     } else {
+  //       console.error("Registration failed");
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error:", error);
+  //   });
 };
 
 // Function to validate step 1 inputs
@@ -116,10 +119,7 @@ const displayErrorMessage = (inputElement, message) => {
   const errorMessage = document.createElement("div");
   errorMessage.className = "error-message";
   errorMessage.textContent = message;
-  inputElement.parentNode.insertBefore(
-    errorMessage,
-    inputElement.nextSibling
-  );
+  inputElement.parentNode.insertBefore(errorMessage, inputElement.nextSibling);
 };
 
 // Function to clear error messages and reset input borders
@@ -130,4 +130,15 @@ const clearErrorMessages = () => {
   });
   nameInput.style.border = "1px solid #ccc";
   emailInput.style.border = "1px solid #ccc";
+};
+
+// Function to display success message for 2 seconds
+const showSuccessMessage = () => {
+  const successMessage = document.createElement("div");
+  successMessage.textContent = "Registration successful";
+  successMessage.className = "success-message";
+  document.body.appendChild(successMessage);
+  setTimeout(() => {
+    successMessage.remove();
+  }, 2000);
 };

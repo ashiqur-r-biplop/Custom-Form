@@ -77,20 +77,19 @@ button .button-subtitle {
     width: 100%;
 }
 
-#step1 h2 {
+#step1 h2,
+#step2 h2 {
     font-family: 'geomanistregular', Arial, sans-serif;
     font-weight: bold !important;
     font-size: 34px;
     text-align: center;
-
-
 }
 
-.step1-image-box {
+/* .step1-image-box {
     width: 400px;
     height: 400px;
     margin: 30px auto 0px;
-}
+} */
 
 .step1-image-box img {
     width: 100%;
@@ -165,4 +164,55 @@ button .button-subtitle {
     font-size: 10px;
     text-align: center;
     font-family: 'geomanistregular', Arial, sans-serif;
+}
+
+#dropdown {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+select {
+    font-size: 24px !important;
+}
+
+#dropdown option {
+    font-size: 20px;
+}
+
+@media screen and (min-width: 0px) and (max-width : 400px) {
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        /* overflow-y: auto; */
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 0px 20px;
+        padding: 0px 0px;
+        border: 1px solid #888;
+        border-radius: 40px;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .step-1-input input {
+        padding-left: 45px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        box-shadow: inset 0 1px 2px rgba(130, 137, 150, 0.23), 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+        border-radius: 10px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        font-family: inherit;
+        position: relative;
+    }
+
 }
