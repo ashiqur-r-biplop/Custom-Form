@@ -64,7 +64,7 @@ button .button-subtitle {
     font-size: 12px;
 }
 
-.step-1-input {
+.step-1-input, .step-2-input {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -195,6 +195,9 @@ select {
 
 #dropdown option {
     font-size: 20px;
+}
+a{
+    text-decoration: none;
 }
 
 @media screen and (min-width: 0px) and (max-width : 400px) {

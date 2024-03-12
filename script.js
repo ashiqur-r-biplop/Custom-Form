@@ -71,29 +71,30 @@ step2RegisterBtn.onclick = () => {
     name: name,
     email: email,
     number: number,
-    option: selectedOption,
+    selectedTime: selectedOption,
   };
   console.log(data);
   // Example of posting data to API (you need to replace this with your actual API endpoint)
-  // fetch("https://example.com/api/register", {
-  //   method: "POST",
-  //   body: JSON.stringify(data),
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // })
-  //   .then((response) => {
-  //     if (response.ok) {
-  //       modal.style.display = "none"; // Close the modal on successful registration
-  //       showSuccessMessage();
-  //       console.log("Registration successful");
-  //     } else {
-  //       console.error("Registration failed");
-  //     }
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error:", error);
-  //   });
+  fetch("https://conditional-drop-down-menu-backend.vercel.app/users", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (response) {
+        console.log(response.ok);
+        modal.style.display = "none"; // Close the modal on successful registration
+        showSuccessMessage();
+        console.log("Registration successful");
+      } else {
+        console.error("Registration failed");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 };
 
 // Function to validate step 1 inputs
@@ -111,7 +112,7 @@ const validateStep1 = () => {
   if (!numberRegex.test(numberInput.value)) {
     displayErrorMessage(numberInput, "Please enter your Phone Number");
     isValid = false;
-  } 
+  }
 
   // Validate email input
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
