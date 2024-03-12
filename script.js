@@ -86,6 +86,9 @@ step2RegisterBtn.onclick = () => {
       if (response) {
         console.log(response.ok);
         modal.style.display = "none"; // Close the modal on successful registration
+        window.location.href =
+          "https://bossyourlifetoday.clickfunnels.com/pre-webinar1710172431922?fbclid=IwAR2b71xZAVe-4-CKpqVrV1Z5LE5hqWzhfaCtd-e0kbevojXh_SLXVmsYzRo";
+
         showSuccessMessage();
         console.log("Registration successful");
       } else {

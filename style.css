@@ -50,21 +50,26 @@ button {
     background-color: rgb(0, 192, 211);
     border: none;
     color: #fff;
-    padding: 20px;
+    padding: 15px 40px;
     border-radius: 60px;
     cursor: pointer;
-    font-family: inherit;
+    font-family: 'geomanistregular', Arial, sans-serif
 }
 
 button .button-title {
     font-size: 46px;
+    font-weight: bold;
+}
+button i {
+    font-size: 34px;
 }
 
 button .button-subtitle {
-    font-size: 12px;
+    font-size: 10px;
 }
 
-.step-1-input, .step-2-input {
+.step-1-input,
+.step-2-input {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -196,7 +201,8 @@ select {
 #dropdown option {
     font-size: 20px;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
