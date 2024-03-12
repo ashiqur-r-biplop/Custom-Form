@@ -108,10 +108,10 @@ const validateStep1 = () => {
   }
   const numberRegex = /^\s*[+-]?(\d+|\d*\.\d+|\d+\.\d*)([Ee][+-]?\d+)?\s*$/;
 
-  if(!numberRegex.test(numberInput.value)) {
+  if (!numberRegex.test(numberInput.value)) {
     displayErrorMessage(numberInput, "Please enter your Phone Number");
     isValid = false;
-  }
+  } 
 
   // Validate email input
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -140,6 +140,7 @@ const clearErrorMessages = () => {
   });
   nameInput.style.border = "1px solid #ccc";
   emailInput.style.border = "1px solid #ccc";
+  numberInput.style.border = "1px solid #ccc";
 };
 
 // Function to display success message for 2 seconds

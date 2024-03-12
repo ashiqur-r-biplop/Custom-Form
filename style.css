@@ -185,6 +185,8 @@ button .button-subtitle {
     display: flex;
     width: 100%;
     padding: 20px;
+    border: 1 px solid #ccc;
+    border-radius: 20px;
 }
 
 select {
