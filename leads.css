@@ -1,0 +1,109 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lead-title {
+    font-family: 'geomanistregular', Arial, sans-serif;
+    font-weight: bold !important;
+    font-size: 34px;
+    text-align: center;
+}
+
+
+
+.lead-row {
+    background-color: rgba(71, 71, 71, 0.192);
+    font-family: 'geomanistregular', Arial, sans-serif;
+}
+
+.data-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.lead-table {
+    width: 100%;
+    border: 2px solid rgba(71, 71, 71, 0.192);
+}
+
+.lead-table th {
+    text-align: center;
+    padding: 20px 0px;
+    border-left: 2px solid rgba(71, 71, 71, 0.192);
+}
+
+.lead-count {
+    text-align: center;
+}
+
+.lead-table td {
+    padding: 10px;
+    word-break: break-word;
+    /* Allows long words to break into the next line */
+}
+
+#data-container {
+    /* min-width: 1200px; */
+    overflow-x: auto;
+}
+
+#data-container table {
+    width: 100%;
+}
+
+.lead-count {
+    background-color: rgba(255, 255, 255, 0.664);
+}
+
+.text-heading-table-1 {
+    border: none !important;
+}
+
+.leads-title {
+    font-family: 'geomanistregular', Arial, sans-serif;
+    font-weight: bold !important;
+    font-size: 34px;
+    text-align: center;
+}
+
+.leads-button {
+    text-align: center;
+    margin: 0px 0px 30px 0px;
+}
+
+.leads-button button {
+    background-color: rgb(0, 192, 211);
+    border: none;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 60px;
+    cursor: pointer;
+    font-family: 'geomanistregular', Arial, sans-serif;
+    font-size: 16px;
+    position: relative;
+}
+
+.leads-button button::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    background-image: url("./image/name.webp");
+    background-repeat: no-repeat;
+    z-index: 99;
+    height: 24px;
+    width: 24px;
+    object-fit: contain;
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+    #data-container {
+        min-width: 1200px;
+        overflow-x: auto;
+    }
+    .lead-table {
+        border: 2px solid rgba(71, 71, 71, 0.192);
+    }
+}
