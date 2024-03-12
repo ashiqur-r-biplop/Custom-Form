@@ -13,6 +13,7 @@ const span = document.getElementsByClassName("close")[0];
 // Get elements from step 1
 const nameInput = document.getElementById("nameInput");
 const emailInput = document.getElementById("emailInput");
+const numberInput = document.getElementById("numberInput");
 const step1RegisterBtn = document.getElementById("step1RegisterBtn");
 
 // Get elements from step 2
@@ -30,6 +31,7 @@ btn.onclick = () => {
   // Clear input fields and error messages
   nameInput.value = "";
   emailInput.value = "";
+  numberInput.value = "";
   dropdown.selectedIndex = 0;
   clearErrorMessages();
 };
@@ -61,12 +63,14 @@ step2RegisterBtn.onclick = () => {
   // Collect data
   const name = nameInput.value;
   const email = emailInput.value;
+  const number = numberInput.value;
   const selectedOption = dropdown.value;
 
   // Post data to API (example)
   const data = {
     name: name,
     email: email,
+    number: number,
     option: selectedOption,
   };
   console.log(data);
@@ -100,6 +104,12 @@ const validateStep1 = () => {
   // Validate name input
   if (nameInput.value === "") {
     displayErrorMessage(nameInput, "Please enter your name");
+    isValid = false;
+  }
+  const numberRegex = /^\s*[+-]?(\d+|\d*\.\d+|\d+\.\d*)([Ee][+-]?\d+)?\s*$/;
+
+  if(!numberRegex.test(numberInput.value)) {
+    displayErrorMessage(numberInput, "Please enter your Phone Number");
     isValid = false;
   }
 

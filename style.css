@@ -166,7 +166,7 @@ button .button-subtitle {
     content: "";
     position: absolute;
     top: 12px;
-    left: 16px;
+    left: 13px;
     background-image: url("./image/phone.webp");
     background-repeat: no-repeat;
     z-index: 99;
