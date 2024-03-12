@@ -98,7 +98,8 @@ button .button-subtitle {
 }
 
 .name-input,
-.email-input {
+.email-input,
+.number-input {
     width: 100%;
 }
 
@@ -130,7 +131,8 @@ button .button-subtitle {
 }
 
 .name-icon,
-.email-icon {
+.email-icon,
+.number-icon {
     position: relative;
 }
 
@@ -157,6 +159,19 @@ button .button-subtitle {
     z-index: 99;
     height: 20px;
     width: 20px;
+    object-fit: cover;
+}
+
+.number-icon::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    background-image: url("./image/phone.webp");
+    background-repeat: no-repeat;
+    z-index: 99;
+    height: 24px;
+    width: 24px;
     object-fit: cover;
 }
 
