@@ -1,4 +1,4 @@
-.container {
+.table-width {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -17,7 +17,7 @@
     font-family: 'geomanistregular', Arial, sans-serif;
 }
 
-.data-container {
+.container-table {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
@@ -44,12 +44,12 @@
     /* Allows long words to break into the next line */
 }
 
-#data-container {
+#container-table {
     /* min-width: 1200px; */
     overflow-x: auto;
 }
 
-#data-container table {
+#container-table table {
     width: 100%;
 }
 
@@ -98,11 +98,13 @@
     object-fit: contain;
 }
 
-@media screen and (min-width: 0px) and (max-width: 600px) {
-    #data-container {
+@media screen and (min-width: 0px) and (max-width: 1200px) {
+    #container-table {
         min-width: 1200px;
+        width: 100%;
         overflow-x: auto;
     }
+
     .lead-table {
         border: 2px solid rgba(71, 71, 71, 0.192);
     }
