@@ -55,17 +55,22 @@ button {
     cursor: pointer;
     font-family: 'geomanistregular', Arial, sans-serif
 }
-
+button:hover {
+    background-color: rgba(0, 193, 211, 0.671);
+}
 button .button-title {
     font-size: 46px;
     font-weight: bold;
 }
 button i {
     font-size: 34px;
+    margin-left: 20px;
+    
 }
 
 button .button-subtitle {
     font-size: 10px;
+    color: #ABEBF0;
 }
 
 .step-1-input,
