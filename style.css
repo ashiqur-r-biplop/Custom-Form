@@ -55,17 +55,20 @@ button {
     cursor: pointer;
     font-family: 'geomanistregular', Arial, sans-serif
 }
+
 button:hover {
     background-color: rgba(0, 193, 211, 0.671);
 }
+
 button .button-title {
     font-size: 46px;
     font-weight: bold;
 }
+
 button i {
     font-size: 34px;
     margin-left: 20px;
-    
+
 }
 
 button .button-subtitle {
@@ -79,13 +82,11 @@ button .button-subtitle {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: 20px;
+    gap: 30px;
     width: 100%;
 }
 
-#step1 {
-    width: 100%;
-}
+
 
 #step1 h2,
 #step2 h2 {
@@ -95,94 +96,45 @@ button .button-subtitle {
     text-align: center;
 }
 
-/* .step1-image-box {
-    width: 400px;
-    height: 400px;
-    margin: 30px auto 0px;
-} */
+
 
 .step1-image-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
 }
 
-.name-input,
-.email-input,
-.number-input {
-    width: 100%;
+.step-1-input-style input::placeholder {
+    font-family: poppins;
+    padding-left: 5px;
+    font-size: 16px;
 }
 
-.step-1-input input {
-    padding-left: 45px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    box-shadow: inset 0 1px 2px rgba(130, 137, 150, 0.23), 0 1px 0 rgba(255, 255, 255, 0.95) !important;
-    border-radius: 10px;
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    font-family: inherit;
-    width: 92%;
-    position: relative;
+.step-1-input-style input {
+    margin-left: 5px;
+    font-size: 16px;
+    font-family: poppins;
 }
 
-.step-1-input input::placeholder {
-    font-family: initial;
-}
-
-.step-1-input input:focus {
+.step-1-input-style:focus-within {
     outline: 1px solid rgb(0, 192, 211);
     box-shadow: inset 0 1px 2px rgba(0, 193, 211, 0.623), 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    border: none !important;
 }
 
 .error-message {
     color: red;
-    top: 0;
+    position: absolute;
+    top: 45px;
+    left: 45px;
 }
 
 .name-icon,
 .email-icon,
 .number-icon {
-    position: relative;
-}
-
-.name-icon::before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: 16px;
-    background-image: url("./image/name.webp");
-    background-repeat: no-repeat;
-    z-index: 99;
-    height: 20px;
-    width: 20px;
-    object-fit: cover;
-}
-
-.email-icon::before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: 16px;
-    background-image: url("./image/email.webp");
-    background-repeat: no-repeat;
-    z-index: 99;
-    height: 20px;
-    width: 20px;
-    object-fit: cover;
-}
-
-.number-icon::before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: 13px;
-    background-image: url("./image/phone.webp");
-    background-repeat: no-repeat;
-    z-index: 99;
-    height: 24px;
     width: 24px;
-    object-fit: cover;
+    height: 24px
 }
 
 .help-text {
@@ -191,25 +143,57 @@ button .button-subtitle {
     font-family: 'geomanistregular', Arial, sans-serif;
 }
 
-#dropdown {
-    display: flex;
-    width: 100%;
-    padding: 20px;
-    border: 1 px solid #ccc;
-    border-radius: 20px;
-}
-
-select {
-    font-size: 24px !important;
-}
-
-#dropdown option {
-    font-size: 20px;
-}
-
 a {
     text-decoration: none;
 }
+
+.number-input input {
+    font-size: 16px;
+}
+
+.step-1-input-style {
+    box-shadow: inset 0 1px 2px rgba(130, 137, 150, 0.23), 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-family: inherit;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.step-1-input-style input {
+    outline: none !important;
+    border: transparent;
+    width: 100%;
+}
+
+.number-icon {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    z-index: 99999;
+    gap: 5px;
+    font-family: poppins;
+}
+
+.number-input input {
+    margin: 0px auto 0px 40px;
+    font-family: poppins;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-family: poppins;
+    outline: none;
+    margin: 0px 0px 30px 0px;
+}
+
 
 @media screen and (min-width: 0px) and (max-width : 400px) {
     .modal {

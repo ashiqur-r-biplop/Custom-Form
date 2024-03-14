@@ -25,17 +25,23 @@
                 <h2>Last Chance: To Attend Australia's #1
                     Wealth Multiplier Workshop</h2>
                 <div class="step-1-input">
-                    <div class="name-input">
-                        <div class="name-icon"></div>
-                        <input type="text" id="nameInput" placeholder="Enter your name">
+                    <div class="name-input step-1-input-style"  id="nameInput-box">
+                        <div class="name-icon"><img src="./image/name.webp" alt=""></div>
+
+                        <input required type="text" id="nameInput" autocomplete="off" placeholder="Enter your name">
+
                     </div>
-                    <div class="email-input">
-                        <div class="email-icon"></div>
-                        <input type="email" id="emailInput" placeholder="Enter your email">
+
+                    <div class="email-input step-1-input-style" id="emailInput-box">
+                        <div class="name-icon"><img src="./image/email.webp" alt=""></div>
+                        <input required type="email" id="emailInput" autocomplete="off" placeholder="Enter your email">
                     </div>
-                    <div class="number-input">
-                        <div class="number-icon"></div>
-                        <input type="number" id="numberInput" placeholder="Enter your Phone number">
+                    <div class="number-input step-1-input-style" id="numberInput-box">
+                        <div class="number-icon">
+                            <img src="./image/australiaFlag.webp" alt="">
+                            <span>+61</span>
+                        </div>
+                        <input required autocomplete="off" type="tel" id="numberInput">
                     </div>
                     <div class="button-center">
                         <button id="step1RegisterBtn">
@@ -57,8 +63,15 @@
                 <h2>Last Chance: To Attend Australia's #1
                     Wealth Multiplier Workshop</h2>
                 <select id="dropdown">
-                    <option value="12-04-24 time-20-24-2024">12-04-24 time-20-24-2024</option>
-                    <option value="14-03-23 time-10-24-2024">14-03-23 time-10-24-2024</option>
+                    <option value="20 March Wednesday 19:00 pm">
+                        20 March Wednesday 19:00 pm
+                    </option>
+                    <option value="24 March Sunday 10:00 am">
+                        24 March Sunday 10:00 am
+                    </option>
+                    <option value="24 March Sunday 19:00 pm">
+                        24 March Sunday 19:00 pm
+                    </option>
                 </select><br>
                 <div class="button-center">
                     <button id="step2RegisterBtn">
@@ -67,6 +80,8 @@
                         <span class="button-subtitle">90 MINUTES OF FREE TRAINING THAT COULD CHANGE YOUR LFIE</span>
                     </button>
                 </div>
+
+
                 <p class="help-text">
                     By submitting this form you are opting in and consenting to
                     receive emails and agree to the Terms of Service & Privacy
