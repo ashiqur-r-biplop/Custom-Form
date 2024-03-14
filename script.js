@@ -130,20 +130,16 @@ const displayErrorMessage = (inputElement, message) => {
 // Function to clear error messages and reset input borders
 const clearErrorMessages = () => {
   const errorMessages = document.querySelectorAll(".error-message");
+  const inputElement = document.querySelectorAll(".step-1-input-style");
   errorMessages.forEach((errorMessage) => {
     errorMessage.parentNode.removeChild(errorMessage);
   });
+  inputElement.forEach((errorMessage) => {
+    errorMessage.style.border = "none";
+    // errorMessage.parentNode.removeChild(errorMessage);
+  });
 };
 
-// Function to display success message for 2 seconds
-const showSuccessMessage = () => {
-  const successMessage = document.createElement("div");
-  successMessage.textContent = "Registration successful";
-  successMessage.className = "success-message";
-  document.body.appendChild(successMessage);
-  setTimeout(() => {
-    successMessage.remove();
-  }, 2000);
-};
+
 //  check valid
 // JavaScript
