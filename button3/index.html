@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- open modal button -->
+    <div class="button-center3">
+        <button id="openModalBtn3">
+            <span>
+                <span class="button-title3">REGISTER NOW</span>
+                <i class="fa_appended fas fa-arrow-alt-circle-right" contenteditable="false"></i>
+            </span>
+            <span class="button-subtitle3">90 MINUTES OF FREE TRAINING THAT COULD CHANGE YOUR LFIE</span>
+        </button>
+    </div>
+    <!-- open modal button -->
+    <!-- modal -->
+    <div id="myModal3" class="modal3">
+        <div class="modal-content3" id="modal-content-animation3">
+            <span class="close3">&times;</span>
+            <div id="step13">
+                <div class="step1-image-box3"><img
+                        src="https://images.clickfunnels.com/ff/935aef27aa44278ff509e768751584/Screenshot-2024-02-06-at-5.44.20-pm.png"
+                        alt=""></div>
+                <h2>Last Chance: To Attend Australia's #1
+                    Wealth Multiplier Workshop</h2>
+                <div class="step-1-input3">
+                    <div class="name-input3 step-1-input-style3 focus-changes-input3" id="nameInput-box3">
+                        <div class="name-icon3"><img
+                                src="https://images.clickfunnels.com/2e/92e55f46874827888347610a7f1d2c/name.png" alt="">
+                        </div>
+                        <input style="font-family: poppins;" required type="text" id="nameInput3" autocomplete="off"
+                            placeholder="Enter your name">
+                    </div>
+                    <div class="email-input3 step-1-input-style3 focus-changes-input3" id="emailInput-box3">
+                        <div class="name-icon3"><img
+                                src="https://images.clickfunnels.com/78/09d7453177495bae2787e37565125f/email.png"
+                                alt="">
+                        </div>
+                        <input required type="email" id="emailInput3" autocomplete="off" placeholder="Enter your email">
+                    </div>
+                    <div class="number-input3 focus-changes-input3" id="numberInput-box3">
+                        <div class="number-input-box3">
+                            <div class="number-flag-box3">
+                                <img src="https://images.clickfunnels.com/6e/50b84f6a504c29a1cada822968b727/images.png"
+                                    class="number-open-flag3" alt="">
+                            </div>
+                            <input type="checkbox" class="check-box3" id="toggleCheckbox3" onchange="toggleDiv3()">
+                            <div class="dorp-down-number-icons3">
+                                <div id="open3">
+                                    <img src="https://images.clickfunnels.com/ab/b66c643cab42848da4aa7b924d5c8a/arrow-down-icon-png-6696-1--1-.png"
+                                        class="" alt="">
+                                </div>
+                                <div id="clos3">
+                                    <img src="https://images.clickfunnels.com/9f/a4f1e65e884072aa8dfa3573c10712/arrow-up-1--1-.png"
+                                        class="" alt="">
+                                </div>
+                            </div>
+                            <div onclick="toggleDivCheck3()" id="hiddenDiv3">
+                                <img src="https://images.clickfunnels.com/6e/50b84f6a504c29a1cada822968b727/images.png"
+                                    class="drop-down-image3" alt="">
+                                <span>Australia +61</span>
+                            </div>
+                        </div>
+                        <input placeholder="Enter your Phone Number" required autocomplete="off" type="tel"
+                            id="numberInput3">
+                    </div>
+                    <div class="button-center3">
+                        <button id="step1RegisterBtn3">
+                            <span>
+                                <span class="button-title3">REGISTER NOW</span>
+                                <i class="fa_appended fas fa-arrow-alt-circle-right" contenteditable="false"></i></span>
+                            <span class="button-subtitle3">90 MINUTES OF FREE TRAINING THAT COULD CHANGE YOUR
+                                LFIE</span>
+                        </button>
+                    </div>
+                    <p class="help-text3">By submitting this form you are opting in and consenting to receive emails and
+                        text messages, and
+                        agree to the Terms of Service & Privacy Policy. Reply STOP to cancel, HELP for help.</p>
+                </div>
+            </div>
+            <div id="step23" style="display:none;">
+                <div class="step1-image-box3">
+                    <img src="https://images.clickfunnels.com/ff/935aef27aa44278ff509e768751584/Screenshot-2024-02-06-at-5.44.20-pm.png"
+                        alt="">
+                </div>
+                <h2>Last Chance: To Attend Australia's #1
+                    Wealth Multiplier Workshop</h2>
+                <select id="dropdown3">
+                    <option value="20 March Wednesday 19:00 pm">
+                        20 March Wednesday 19:00 pm
+                    </option>
+                    <option value="24 March Sunday 10:00 am">
+                        24 March Sunday 10:00 am
+                    </option>
+                    <option value="24 March Sunday 19:00 pm">
+                        24 March Sunday 19:00 pm
+                    </option>
+                </select><br>
+                <div class="button-center3">
+                    <button id="step2RegisterBtn3">
+                        <span><span class="button-title3">REGISTER NOW</span>
+                            <i class="fa_appended fas fa-arrow-alt-circle-right" contenteditable="false"></i></span>
+                        <span class="button-subtitle3">90 MINUTES OF FREE TRAINING THAT COULD CHANGE YOUR LFIE</span>
+                    </button>
+                </div>
+                <p class="help-text3">
+                    By submitting this form you are opting in and consenting to
+                    receive emails and agree to the Terms of Service & Privacy
+                    Policy. Reply STOP to cancel, HELP for help.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

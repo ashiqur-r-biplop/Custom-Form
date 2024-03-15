@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- open modal button -->
+    <div class="button-center2">
+        <button id="openModalBtn2">
+            <span>
+                <span class="button-title2">REGISTER NOW</span>
+                <i class="fa_appended fas fa-arrow-alt-circle-right" contenteditable="false"></i>
+            </span>
+            <span class="button-subtitle2">90 MINUTES OF FREE TRAINING THAT COULD CHANGE YOUR LFIE</span>
+        </button>
+    </div>
+    <!-- open modal button -->
+    <!-- modal -->
+    <div id="myModal2" class="modal2">
+        <div class="modal-content2" id="modal-content-animation2">
+            <span class="close2">&times;</span>
+            <div id="step12">
+                <div class="step1-image-box2"><img
+                        src="https://images.clickfunnels.com/ff/935aef27aa44278ff509e768751584/Screenshot-2024-02-06-at-5.44.20-pm.png"
+                        alt=""></div>
+                <h2>Last Chance: To Attend Australia's #1
+                    Wealth Multiplier Workshop</h2>
+                <div class="step-1-input2">
+                    <div class="name-input2 step-1-input-style2 focus-changes-input2" id="nameInput-box2">
+                        <div class="name-icon2"><img
+                                src="https://images.clickfunnels.com/2e/92e55f46874827888347610a7f1d2c/name.png" alt="">
+                        </div>
+                        <input style="font-family: poppins;" required type="text" id="nameInput2" autocomplete="off"
+                            placeholder="Enter your name">
+                    </div>
+                    <div class="email-input2 step-1-input-style2 focus-changes-input2" id="emailInput-box2">
+                        <div class="name-icon2"><img
+                                src="https://images.clickfunnels.com/78/09d7453177495bae2787e37565125f/email.png"
+                                alt="">
+                        </div>
+                        <input required type="email" id="emailInput2" autocomplete="off" placeholder="Enter your email">
+                    </div>
+                    <div class="number-input2 focus-changes-input2" id="numberInput-box2">
+                        <div class="number-input-box2">
+                            <div class="number-flag-box2">
+                                <img src="https://images.clickfunnels.com/6e/50b84f6a504c29a1cada822968b727/images.png"
+                                    class="number-open-flag2" alt="">
+                            </div>
+                            <input type="checkbox" class="check-box2" id="toggleCheckbox2" onchange="toggleDiv2()">
+                            <div class="dorp-down-number-icons2">
+                                <div id="open2">
+                                    <img src="https://images.clickfunnels.com/ab/b66c643cab42848da4aa7b924d5c8a/arrow-down-icon-png-6696-1--1-.png"
+                                        class="" alt="">
+                                </div>
+                                <div id="clos2">
+                                    <img src="https://images.clickfunnels.com/9f/a4f1e65e884072aa8dfa3573c10712/arrow-up-1--1-.png"
+                                        class="" alt="">
+                                </div>
+                            </div>
+                            <div onclick="toggleDivCheck2()" id="hiddenDiv2">
+                                <img src="https://images.clickfunnels.com/6e/50b84f6a504c29a1cada822968b727/images.png"
+                                    class="drop-down-image2" alt="">
+                                <span>Australia +61</span>
+                            </div>
+                        </div>
+                        <input placeholder="Enter your Phone Number" required autocomplete="off" type="tel"
+                            id="numberInput2">
+                    </div>
+                    <div class="button-center2">
+                        <button id="step1RegisterBtn2">
+                            <span>
+                                <span class="button-title2">REGISTER NOW</span>
+                                <i class="fa_appended fas fa-arrow-alt-circle-right" contenteditable="false"></i></span>
+                            <span class="button-subtitle2">90 MINUTES OF FREE TRAINING THAT COULD CHANGE YOUR
+                                LFIE</span>
+                        </button>
+                    </div>
+                    <p class="help-text2">By submitting this form you are opting in and consenting to receive emails and
+                        text messages, and
+                        agree to the Terms of Service & Privacy Policy. Reply STOP to cancel, HELP for help.</p>
+                </div>
+            </div>
+            <div id="step22" style="display:none;">
+                <div class="step1-image-box2">
+                    <img src="https://images.clickfunnels.com/ff/935aef27aa44278ff509e768751584/Screenshot-2024-02-06-at-5.44.20-pm.png"
+                        alt="">
+                </div>
+                <h2>Last Chance: To Attend Australia's #1
+                    Wealth Multiplier Workshop</h2>
+                <select id="dropdown2">
+                    <option value="20 March Wednesday 19:00 pm">
+                        20 March Wednesday 19:00 pm
+                    </option>
+                    <option value="24 March Sunday 10:00 am">
+                        24 March Sunday 10:00 am
+                    </option>
+                    <option value="24 March Sunday 19:00 pm">
+                        24 March Sunday 19:00 pm
+                    </option>
+                </select><br>
+                <div class="button-center2">
+                    <button id="step2RegisterBtn2">
+                        <span><span class="button-title2">REGISTER NOW</span>
+                            <i class="fa_appended fas fa-arrow-alt-circle-right" contenteditable="false"></i></span>
+                        <span class="button-subtitle2">90 MINUTES OF FREE TRAINING THAT COULD CHANGE YOUR LFIE</span>
+                    </button>
+                </div>
+                <p class="help-text2">
+                    By submitting this form you are opting in and consenting to
+                    receive emails and agree to the Terms of Service & Privacy
+                    Policy. Reply STOP to cancel, HELP for help.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var modal2 = document.getElementById("myModal2");
+        var modalContentAnimation2 = document.getElementById("modal-content-animation2");
+        var btn2 = document.getElementById("openModalBtn2");
+        var span2 = document.getElementsByClassName("close2")[0];
+        var nameInput2 = document.getElementById("nameInput2");
+        var emailInput2 = document.getElementById("emailInput2");
+        var numberInput2 = document.getElementById("numberInput2");
+        var step1RegisterBtn2 = document.getElementById("step1RegisterBtn2");
+        var emailInputBox2 = document.getElementById("emailInput-box2");
+        var nameInputBox2 = document.getElementById("nameInput-box2");
+        var numberInputBox2 = document.getElementById("numberInput-box2");
+        var dropdown2 = document.getElementById("dropdown2");
+        var step2RegisterBtn2 = document.getElementById("step2RegisterBtn2");
+        btn2.onclick = function () {
+            modal2.style.display = "block";
+            modalContentAnimation2.style.transform = "translateY(5%)";
+            modalContentAnimation2.style.transition = "transform 2s";
+            document.getElementById("step12").style.display = "block";
+            document.getElementById("step22").style.display = "none";
+            nameInput2.value = "";
+            emailInput2.value = "";
+            numberInput2.value = "";
+            dropdown2.selectedIndex = 0;
+            clearErrorMessages2();
+        };
+        span2.onclick = function () {
+            modal2.style.display = "none";
+        };
+        window.onclick = function (event) {
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        };
+        step1RegisterBtn2.onclick = function () {
+            if (validateStep12()) {
+                document.getElementById("step12").style.display = "none";
+                document.getElementById("step22").style.display = "block";
+                clearErrorMessages2();
+            }
+        };
+        step2RegisterBtn2.onclick = function () {
+            var name = nameInput2.value;
+            var email = emailInput2.value;
+            var number = numberInput2.value;
+            var selectedOption = dropdown2.value;
+            var data = {
+                name: name,
+                email: email,
+                number: `'+61 ${number}'`,
+                selectedTime: selectedOption,
+            };
+            fetch("https://conditional-drop-down-menu-backend.vercel.app/users", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+                .then((response) => {
+                    if (response) {
+                        console.log(response.ok);
+                        modal2.style.display = "none";
+                        window.location.href =
+                            "https://bossyourlifetoday.clickfunnels.com/pre-webinar1710172431922?fbclid=IwAR2b71xZAVe-4-CKpqVrV1Z5LE5hqWzhfaCtd-e0kbevojXh_SLXVmsYzRo";
+                        showSuccessMessage();
+                        console.log("Registration successful");
+                    } else {
+                        console.error("Registration failed");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                });
+        };
+        var validateStep12 = function () {
+            let isValid = true;
+            clearErrorMessages2();
+            if (nameInput2.value === "") {
+                displayErrorMessage2(nameInputBox2, "Please enter your name");
+                isValid = false;
+            }
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput2.value)) {
+                displayErrorMessage2(emailInputBox2, "Email is not valid");
+                isValid = false;
+            }
+            var numberRegex = /^\s*[+-]?(\d+|\d*\.\d+|\d+\.\d*)([Ee][+-]?\d+)?\s*$/;
+            console.log(numberRegex.test(numberInput2.value));
+            if (!numberRegex.test(numberInput2.value)) {
+                numberInput2.addEventListener("input", () => {
+                    console.log("object");
+                    numberInput2.value = numberInput2.value.replace(/[^0-9]/g, "");
+                });
+                displayErrorMessage2(numberInputBox2, "Please enter your Phone Number");
+                isValid = false;
+            }
+            return isValid;
+        };
+        function displayErrorMessage2(inputElement, message) {
+            inputElement.style.border = "1px solid red";
+            var errorMessage = document.createElement("div");
+            errorMessage.className = "error-message2";
+            errorMessage.textContent = message;
+            inputElement.appendChild(errorMessage, inputElement.nextSibling);
+        }
+        function clearErrorMessages2() {
+            var errorMessages = document.querySelectorAll(".error-message2");
+            var inputElement = document.querySelectorAll(".step-1-input-style2");
+            errorMessages.forEach((errorMessage) => {
+                errorMessage.parentNode.removeChild(errorMessage);
+            });
+            inputElement.forEach((errorMessage) => {
+                errorMessage.style.border = "none";
+            });
+        }
+        let isHiddenDivOpen = false;
+        function toggleDiv2() {
+            let checkbox = document.getElementById("toggleCheckbox2");
+            let hiddenDiv = document.getElementById("hiddenDiv2");
+            let openIcon = document.getElementById("open2");
+            let closeIcon = document.getElementById("clos2");
+            if (checkbox.checked) {
+                hiddenDiv.style.display = "block";
+                closeIcon.style.display = "block";
+                openIcon.style.display = "none";
+                isHiddenDivOpen = true;
+            } else {
+                hiddenDiv.style.display = "none";
+                openIcon.style.display = "block";
+                closeIcon.style.display = "none";
+                isHiddenDivOpen = false;
+            }
+        }
+        document.addEventListener("click", function (event) {
+            let hiddenDiv = document.getElementById("hiddenDiv2");
+            let checkbox = document.getElementById("toggleCheckbox2");
+            let openIcon = document.getElementById("open2");
+            let closeIcon = document.getElementById("clos2");
+            let targetElement = event.target;
+            if (isHiddenDivOpen && !hiddenDiv.contains(targetElement)) {
+                hiddenDiv.style.display = "none";
+                checkbox.checked = false;
+                isHiddenDivOpen = false;
+                closeIcon.style.display = "none";
+                openIcon.style.display = "block";
+            }
+        });
+        document.getElementById("hiddenDiv2").addEventListener("blur", function () {
+            let checkbox = document.getElementById("toggleCheckbox2");
+            let hiddenDiv = document.getElementById("hiddenDiv2");
+            let openIcon = document.getElementById("open2");
+            let closeIcon = document.getElementById("clos2");
+            if (isHiddenDivOpen) {
+                console.log("object");
+                console.log(hiddenDiv);
+                hiddenDiv.style.display = "none";
+                checkbox.checked = false;
+                isHiddenDivOpen = false;
+                closeIcon.style.display = "none";
+                openIcon.style.display = "block";
+            }
+        });
+        function toggleDivCheck2() {
+            let checkbox = document.getElementById("toggleCheckbox2");
+            let hiddenDiv = document.getElementById("hiddenDiv2");
+            let openIcon = document.getElementById("open2");
+            let closeIcon = document.getElementById("clos2");
+            if (checkbox.checked) {
+                checkbox.checked = false;
+                hiddenDiv.style.display = "none";
+                closeIcon.style.display = "none";
+                openIcon.style.display = "block";
+            } else {
+                hiddenDiv.style.display = "block";
+                closeIcon.style.display = "block";
+                openIcon.style.display = "none";
+            }
+        }
+        toggleDivCheck2();
+        toggleDiv2();
+
+    </script>
+    <!-- <script src="script.js"></script> -->
+
+
+</body>
+
+</html>
