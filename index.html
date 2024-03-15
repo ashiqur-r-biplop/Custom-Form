@@ -25,23 +25,39 @@
                 <h2>Last Chance: To Attend Australia's #1
                     Wealth Multiplier Workshop</h2>
                 <div class="step-1-input">
-                    <div class="name-input step-1-input-style"  id="nameInput-box">
+                    <div class="name-input step-1-input-style focus-changes-input" id="nameInput-box">
                         <div class="name-icon"><img src="./image/name.webp" alt=""></div>
 
                         <input required type="text" id="nameInput" autocomplete="off" placeholder="Enter your name">
 
                     </div>
 
-                    <div class="email-input step-1-input-style" id="emailInput-box">
+                    <div class="email-input step-1-input-style focus-changes-input" id="emailInput-box">
                         <div class="name-icon"><img src="./image/email.webp" alt=""></div>
                         <input required type="email" id="emailInput" autocomplete="off" placeholder="Enter your email">
                     </div>
-                    <div class="number-input step-1-input-style" id="numberInput-box">
-                        <div class="number-icon">
-                            <img src="./image/australiaFlag.webp" alt="">
-                            <span>+61</span>
+                    <div class="number-input focus-changes-input" id="numberInput-box">
+
+                        <div class="number-input-box">
+                            <div class="number-flag-box">
+                                <img src="./image/australiaFlag.png" class="number-open-flag" alt="">
+                            </div>
+                            <input type="checkbox" class="check-box" id="toggleCheckbox" onchange="toggleDiv()">
+                            <div class="dorp-down-number-icons">
+                                <div id="open">
+                                    <img src="" class="" alt="">
+                                </div>
+                                <div id="clos">
+                                    <img src="" class="" alt="">
+                                </div>
+                            </div>
+                            <div onclick="toggleDivCheck()" id="hiddenDiv">
+                                <img src="./image/australiaFlag.png" class="drop-down-image" alt="">
+                                <span>Australia +61</span>
+                            </div>
                         </div>
-                        <input required autocomplete="off" type="tel" id="numberInput">
+                        <input placeholder="Enter your Phone Number" required autocomplete="off" type="tel"
+                            id="numberInput">
                     </div>
                     <div class="button-center">
                         <button id="step1RegisterBtn">
@@ -92,6 +108,8 @@
     </div>
 
     <script src="script.js"></script>
+
+
 </body>
 
 </html>

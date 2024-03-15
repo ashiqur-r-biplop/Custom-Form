@@ -113,10 +113,10 @@ button .button-subtitle {
     font-family: poppins;
 }
 
-.step-1-input-style:focus-within {
+.focus-changes-input:focus-within {
     outline: 1px solid rgb(0, 192, 211);
     box-shadow: inset 0 1px 2px rgba(0, 193, 211, 0.623), 0 1px 0 rgba(255, 255, 255, 0.95) !important;
-    border: none !important;
+    border: 1px transparent;
 }
 
 .error-message {
@@ -127,8 +127,7 @@ button .button-subtitle {
 }
 
 .name-icon,
-.email-icon,
-.number-icon {
+.email-icon {
     width: 24px;
     height: 24px
 }
@@ -145,20 +144,74 @@ a {
 
 .number-input input {
     font-size: 16px;
+    margin: 0px auto 0px 10px;
+    font-family: poppins;
+    outline: none;
+    border: none;
+    width: 100%;
+    background: transparent;
 }
 
+.number-input-box {
+    position: relative;
+    padding: 10px;
+    width: 30px !important;
+    height: 24px;
+}
+
+.number-input-box:hover {
+    background-color: #aaaaaa4b;
+    z-index: 99;
+    border-radius: 10px 0px 0px 10px;
+    cursor: pointer;
+}
+
+.number-input-box input {
+    position: absolute;
+    top: 12px;
+    z-index: 999999999;
+    left: 12px;
+    margin: 0px;
+    width: 25px !important;
+    height: 25px !important;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.number-flag-box {
+    height: 20px;
+    width: 20px;
+}
+
+.number-input-box .number-open-flag {
+    width: 24px;
+    height: auto;
+    position: absolute;
+    top: 18px;
+    object-fit: contain;
+}
+
+.number-input-box #hiddenDiv {
+    position: absolute;
+    width: 300px;
+    top: 40px;
+    left: 0px;
+}
+#hiddenDiv span{
+    white-space: nowrap;
+}
 .step-1-input-style {
     box-shadow: inset 0 2px 8px rgba(130, 137, 150, 0.23), 10px 2px 200px rgba(255, 255, 255, 0.014) !important;
     border-radius: 10px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    font-family: inherit;
+    font-family: popinse;
     position: relative;
     width: 100%;
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 10px 10px;
+    padding: 10px 2px 10px 10px;
 }
 
 .step-1-input-style input {
@@ -176,9 +229,19 @@ a {
     font-family: poppins;
 }
 
-.number-input input {
-    margin: 0px auto 0px 40px;
+.number-input {
+    box-shadow: inset 0 2px 8px rgba(130, 137, 150, 0.23), 8px 2px 200px rgba(255, 255, 255, 0.014) !important;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     font-family: poppins;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0px 10px 0px 0px;
+    border: none;
 }
 
 select {
@@ -197,6 +260,39 @@ option {
     padding: 10px !important;
 }
 
+#hiddenDiv {
+    background-color: #F1F1F1;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: poppins;
+    width: 120px !important;
+    font-weight: 500;
+}
+
+#hiddenDiv img {
+    z-index: 99999999999999999999;
+    width: 24px;
+    object-fit: contain;
+}
+
+.dorp-down-number-icons {
+    position: absolute;
+
+    top: 15px;
+    left: 35px;
+
+}
+
+.dorp-down-number-icons #open img,
+.dorp-down-number-icons #clos img {
+    position: absolute !important;
+    top: 0px;
+    left: 0px;
+    width: 10px;
+    height: 10px;
+    object-fit: cover;
+}
 
 @media screen and (min-width: 0px) and (max-width : 600px) {
     .modal {
@@ -235,13 +331,28 @@ option {
         border-radius: 10px;
         background-color: #fff;
         border: 1px solid rgba(0, 0, 0, 0.2);
-        font-family: inherit;
+        font-family: poppins;
         position: relative;
         width: 95%;
         display: flex;
         justify-content: start;
         align-items: center;
         padding: 10px 10px;
+    }
+
+    .number-input {
+        box-shadow: inset 0 2px 8px rgba(130, 137, 150, 0.23), 8px 2px 200px rgba(255, 255, 255, 0.014) !important;
+        border-radius: 10px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        font-family: poppins;
+        position: relative;
+        width: 98%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 0px 10px 0px 0px;
+        border: none;
     }
 
     #step1 h2,

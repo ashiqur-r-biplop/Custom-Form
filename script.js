@@ -1,13 +1,9 @@
-// Get the modal
 const modal = document.getElementById("myModal");
 const modalContentAnimation = document.getElementById(
   "modal-content-animation"
 );
-
 const btn = document.getElementById("openModalBtn");
-
 const span = document.getElementsByClassName("close")[0];
-
 const nameInput = document.getElementById("nameInput");
 const emailInput = document.getElementById("emailInput");
 const numberInput = document.getElementById("numberInput");
@@ -17,7 +13,6 @@ const nameInputBox = document.getElementById("nameInput-box");
 const numberInputBox = document.getElementById("numberInput-box");
 const dropdown = document.getElementById("dropdown");
 const step2RegisterBtn = document.getElementById("step2RegisterBtn");
-
 btn.onclick = () => {
   modal.style.display = "block";
   modalContentAnimation.style.transform = "translateY(5%)";
@@ -61,7 +56,6 @@ step2RegisterBtn.onclick = () => {
     number: `+61 ${number}`,
     selectedTime: selectedOption,
   };
-  console.log(data);
   fetch("https://conditional-drop-down-menu-backend.vercel.app/users", {
     method: "POST",
     body: JSON.stringify(data),
@@ -87,18 +81,15 @@ step2RegisterBtn.onclick = () => {
     });
 };
 
-// Function to validate step 1 inputs
 const validateStep1 = () => {
   let isValid = true;
   clearErrorMessages();
 
-  // Validate name input
   if (nameInput.value === "") {
     displayErrorMessage(nameInputBox, "Please enter your name");
     isValid = false;
   }
 
-  // Validate email input
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(emailInput.value)) {
     displayErrorMessage(emailInputBox, "Email is not valid");
@@ -118,7 +109,6 @@ const validateStep1 = () => {
   return isValid;
 };
 
-// Function to display error messages
 const displayErrorMessage = (inputElement, message) => {
   inputElement.style.border = "1px solid red";
   const errorMessage = document.createElement("div");
@@ -127,7 +117,6 @@ const displayErrorMessage = (inputElement, message) => {
   inputElement.appendChild(errorMessage, inputElement.nextSibling);
 };
 
-// Function to clear error messages and reset input borders
 const clearErrorMessages = () => {
   const errorMessages = document.querySelectorAll(".error-message");
   const inputElement = document.querySelectorAll(".step-1-input-style");
@@ -136,10 +125,63 @@ const clearErrorMessages = () => {
   });
   inputElement.forEach((errorMessage) => {
     errorMessage.style.border = "none";
-    // errorMessage.parentNode.removeChild(errorMessage);
   });
 };
+let isHiddenDivOpen = false;
 
+const toggleDiv = () => {
+  let checkbox = document.getElementById("toggleCheckbox");
+  let hiddenDiv = document.getElementById("hiddenDiv");
+  let openIcon = document.getElementById("open");
+  let closeIcon = document.getElementById("clos");
 
-//  check valid
-// JavaScript
+  if (checkbox.checked) {
+    hiddenDiv.style.display = "block";
+    closeIcon.style.display = "block";
+    openIcon.style.display = "none";
+    isHiddenDivOpen = true;
+  } else {
+    hiddenDiv.style.display = "none";
+    openIcon.style.display = "block";
+    closeIcon.style.display = "none";
+    isHiddenDivOpen = false;
+  }
+};
+
+const toggleDivCheck = () => {
+  let checkbox = document.getElementById("toggleCheckbox");
+  let hiddenDiv = document.getElementById("hiddenDiv");
+  if (checkbox.checked) {
+    checkbox.checked = false;
+    hiddenDiv.style.display = "none";
+  } else {
+    hiddenDiv.style.display = "block";
+  }
+};
+
+document.addEventListener("click", (event) => {
+  let hiddenDiv = document.getElementById("hiddenDiv");
+  let checkbox = document.getElementById("toggleCheckbox");
+  let targetElement = event.target;
+
+  if (isHiddenDivOpen && !hiddenDiv.contains(targetElement)) {
+    hiddenDiv.style.display = "none";
+    checkbox.checked = false;
+    isHiddenDivOpen = false;
+  }
+});
+
+document.getElementById("hiddenDiv").addEventListener("blur", () => {
+  if (isHiddenDivOpen) {
+    console.log("object");
+    let checkbox = document.getElementById("toggleCheckbox");
+    let hiddenDiv = document.getElementById("hiddenDiv");
+    console.log(hiddenDiv);
+    hiddenDiv.style.display = "none";
+    checkbox.checked = false;
+    isHiddenDivOpen = false;
+  }
+});
+
+toggleDivCheck();
+toggleDiv();
