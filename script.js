@@ -1,19 +1,17 @@
-const modal = document.getElementById("myModal");
-const modalContentAnimation = document.getElementById(
-  "modal-content-animation"
-);
-const btn = document.getElementById("openModalBtn");
-const span = document.getElementsByClassName("close")[0];
-const nameInput = document.getElementById("nameInput");
-const emailInput = document.getElementById("emailInput");
-const numberInput = document.getElementById("numberInput");
-const step1RegisterBtn = document.getElementById("step1RegisterBtn");
-const emailInputBox = document.getElementById("emailInput-box");
-const nameInputBox = document.getElementById("nameInput-box");
-const numberInputBox = document.getElementById("numberInput-box");
-const dropdown = document.getElementById("dropdown");
-const step2RegisterBtn = document.getElementById("step2RegisterBtn");
-btn.onclick = () => {
+var modal = document.getElementById("myModal");
+var modalContentAnimation = document.getElementById("modal-content-animation");
+var btn = document.getElementById("openModalBtn");
+var span = document.getElementsByClassName("close")[0];
+var nameInput = document.getElementById("nameInput");
+var emailInput = document.getElementById("emailInput");
+var numberInput = document.getElementById("numberInput");
+var step1RegisterBtn = document.getElementById("step1RegisterBtn");
+var emailInputBox = document.getElementById("emailInput-box");
+var nameInputBox = document.getElementById("nameInput-box");
+var numberInputBox = document.getElementById("numberInput-box");
+var dropdown = document.getElementById("dropdown");
+var step2RegisterBtn = document.getElementById("step2RegisterBtn");
+btn.onclick = function () {
   modal.style.display = "block";
   modalContentAnimation.style.transform = "translateY(5%)";
   modalContentAnimation.style.transition = "transform 2s";
@@ -25,35 +23,30 @@ btn.onclick = () => {
   dropdown.selectedIndex = 0;
   clearErrorMessages();
 };
-
-span.onclick = () => {
+span.onclick = function () {
   modal.style.display = "none";
 };
-
-window.onclick = (event) => {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 };
-
-step1RegisterBtn.onclick = () => {
+step1RegisterBtn.onclick = function () {
   if (validateStep1()) {
     document.getElementById("step1").style.display = "none";
     document.getElementById("step2").style.display = "block";
     clearErrorMessages();
   }
 };
-
-step2RegisterBtn.onclick = () => {
-  const name = nameInput.value;
-  const email = emailInput.value;
-  const number = numberInput.value;
-  const selectedOption = dropdown.value;
-
-  const data = {
+step2RegisterBtn.onclick = function () {
+  var name = nameInput.value;
+  var email = emailInput.value;
+  var number = numberInput.value;
+  var selectedOption = dropdown.value;
+  var data = {
     name: name,
     email: email,
-    number: `+61 ${number}`,
+    number: `'+61 ${number}'`,
     selectedTime: selectedOption,
   };
   fetch("https://conditional-drop-down-menu-backend.vercel.app/users", {
@@ -69,7 +62,6 @@ step2RegisterBtn.onclick = () => {
         modal.style.display = "none";
         window.location.href =
           "https://bossyourlifetoday.clickfunnels.com/pre-webinar1710172431922?fbclid=IwAR2b71xZAVe-4-CKpqVrV1Z5LE5hqWzhfaCtd-e0kbevojXh_SLXVmsYzRo";
-
         showSuccessMessage();
         console.log("Registration successful");
       } else {
@@ -80,22 +72,19 @@ step2RegisterBtn.onclick = () => {
       console.error("Error:", error);
     });
 };
-
-const validateStep1 = () => {
+var validateStep1 = function () {
   let isValid = true;
   clearErrorMessages();
-
   if (nameInput.value === "") {
     displayErrorMessage(nameInputBox, "Please enter your name");
     isValid = false;
   }
-
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(emailInput.value)) {
     displayErrorMessage(emailInputBox, "Email is not valid");
     isValid = false;
   }
-  const numberRegex = /^\s*[+-]?(\d+|\d*\.\d+|\d+\.\d*)([Ee][+-]?\d+)?\s*$/;
+  var numberRegex = /^\s*[+-]?(\d+|\d*\.\d+|\d+\.\d*)([Ee][+-]?\d+)?\s*$/;
   console.log(numberRegex.test(numberInput.value));
   if (!numberRegex.test(numberInput.value)) {
     numberInput.addEventListener("input", () => {
@@ -105,36 +94,31 @@ const validateStep1 = () => {
     displayErrorMessage(numberInputBox, "Please enter your Phone Number");
     isValid = false;
   }
-
   return isValid;
 };
-
-const displayErrorMessage = (inputElement, message) => {
+function displayErrorMessage(inputElement, message) {
   inputElement.style.border = "1px solid red";
-  const errorMessage = document.createElement("div");
+  var errorMessage = document.createElement("div");
   errorMessage.className = "error-message";
   errorMessage.textContent = message;
   inputElement.appendChild(errorMessage, inputElement.nextSibling);
-};
-
-const clearErrorMessages = () => {
-  const errorMessages = document.querySelectorAll(".error-message");
-  const inputElement = document.querySelectorAll(".step-1-input-style");
+}
+function clearErrorMessages() {
+  var errorMessages = document.querySelectorAll(".error-message");
+  var inputElement = document.querySelectorAll(".step-1-input-style");
   errorMessages.forEach((errorMessage) => {
     errorMessage.parentNode.removeChild(errorMessage);
   });
   inputElement.forEach((errorMessage) => {
     errorMessage.style.border = "none";
   });
-};
+}
 let isHiddenDivOpen = false;
-
-const toggleDiv = () => {
+function toggleDiv() {
   let checkbox = document.getElementById("toggleCheckbox");
   let hiddenDiv = document.getElementById("hiddenDiv");
   let openIcon = document.getElementById("open");
   let closeIcon = document.getElementById("clos");
-
   if (checkbox.checked) {
     hiddenDiv.style.display = "block";
     closeIcon.style.display = "block";
@@ -146,42 +130,51 @@ const toggleDiv = () => {
     closeIcon.style.display = "none";
     isHiddenDivOpen = false;
   }
-};
-
-const toggleDivCheck = () => {
-  let checkbox = document.getElementById("toggleCheckbox");
-  let hiddenDiv = document.getElementById("hiddenDiv");
-  if (checkbox.checked) {
-    checkbox.checked = false;
-    hiddenDiv.style.display = "none";
-  } else {
-    hiddenDiv.style.display = "block";
-  }
-};
-
-document.addEventListener("click", (event) => {
+}
+document.addEventListener("click", function (event) {
   let hiddenDiv = document.getElementById("hiddenDiv");
   let checkbox = document.getElementById("toggleCheckbox");
+  let openIcon = document.getElementById("open");
+  let closeIcon = document.getElementById("clos");
   let targetElement = event.target;
-
   if (isHiddenDivOpen && !hiddenDiv.contains(targetElement)) {
     hiddenDiv.style.display = "none";
     checkbox.checked = false;
     isHiddenDivOpen = false;
+    closeIcon.style.display = "none";
+    openIcon.style.display = "block";
   }
 });
-
-document.getElementById("hiddenDiv").addEventListener("blur", () => {
+document.getElementById("hiddenDiv").addEventListener("blur", function () {
+  let checkbox = document.getElementById("toggleCheckbox");
+  let hiddenDiv = document.getElementById("hiddenDiv");
+  let openIcon = document.getElementById("open");
+  let closeIcon = document.getElementById("clos");
   if (isHiddenDivOpen) {
     console.log("object");
-    let checkbox = document.getElementById("toggleCheckbox");
-    let hiddenDiv = document.getElementById("hiddenDiv");
     console.log(hiddenDiv);
     hiddenDiv.style.display = "none";
     checkbox.checked = false;
     isHiddenDivOpen = false;
+    closeIcon.style.display = "none";
+    openIcon.style.display = "block";
   }
 });
-
+function toggleDivCheck() {
+  let checkbox = document.getElementById("toggleCheckbox");
+  let hiddenDiv = document.getElementById("hiddenDiv");
+  let openIcon = document.getElementById("open");
+  let closeIcon = document.getElementById("clos");
+  if (checkbox.checked) {
+    checkbox.checked = false;
+    hiddenDiv.style.display = "none";
+    closeIcon.style.display = "none";
+    openIcon.style.display = "block";
+  } else {
+    hiddenDiv.style.display = "block";
+    closeIcon.style.display = "block";
+    openIcon.style.display = "none";
+  }
+}
 toggleDivCheck();
 toggleDiv();
